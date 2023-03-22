@@ -15,6 +15,7 @@ const app = {
         .then(function(json){
             json.jokes.forEach(function(jokeData){
                 const joke = new Joke(jokeData.setup, jokeData.delivery);
+                app.items.push(joke);
                 console.log(Joke);
             });
 
@@ -24,7 +25,8 @@ const app = {
     onSearch() {
     },
     render(message) {
-        //document.querySelector('#list').insertAdjacentHTML;
+        // TODO: loop over app.items
+        document.querySelector('#list').insertAdjacentHTML('beforeend', joke.htmlString());
     }
 
 };
